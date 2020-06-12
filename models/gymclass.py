@@ -14,3 +14,5 @@ class gymclass(models.Model):
                                      ('anaerobic','Anaerobica'),
                                      ('relax','Relax'),],
                                      'Tipo de actividad')
+    
+    gymuser_ids = fields.Many2many("gym.gymuser",string="Usuarios confirmados")
