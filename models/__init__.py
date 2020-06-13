@@ -2,3 +2,4 @@
 
 from . import gymclass
 from . import gymuser
+from . import gyminstructor

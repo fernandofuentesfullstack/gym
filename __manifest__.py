@@ -7,7 +7,7 @@
     'category': 'Gym',
     'version': '0.1',
     'depends': ['base'],
-    'data': ['views/gymclass_view.xml', 'views/gymuser_view.xml'],
+    'data': ['views/gymclass_view.xml', 'views/gymuser_view.xml', 'views/gyminstructor_view.xml'],
     'demo': [ ],
     'application': True,
 }

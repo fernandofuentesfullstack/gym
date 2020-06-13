@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- VISTA FORM -->
+		<record model="ir.ui.view" id="gym_gyminstructor_form_view">
+			<field name="name">gym_gyminstructor_form_view</field>
+			<field name="model">gym.gyminstructor</field>
+			<field name="arch" type="xml">
+				<form string="Formulario de Instructores">
+					<group string="Instructor">
+						<field name="name" />
+						<field name="idcard" />
+						<field name="photo" />
+						<field name="gymclass_ids" />
+					</group>
+				</form>
+			</field>
+		</record>
+		
+		<!-- VISTA TREE -->
+		<record model="ir.ui.view" id="gym_gyminstructor_tree_view">
+			<field name="name">gym_gyminstructor_tree_view</field>
+			<field name="model">gym.gyminstructor</field>
+			<field name="arch" type="xml">
+				<tree string="Lista de Instructores">
+					<field name="name" />
+					<field name="idcard" />
+					<field name="photo" />
+					<field name="gymclass_ids" />
+				</tree>
+			</field>
+		</record>
+		
+		<record id="act_gyminstructor" model="ir.actions.act_window">
+			<field name="name">Instructores</field>
+			<field name="res_model">gym.gyminstructor</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		
+		<menuitem name="Instructores" id="gyminstructor_submenu" parent="gym"
+			sequence="100" />
+			
+		<menuitem name="Ver instructores" id="gyminstructor_submenu_2"
+			parent="gyminstructor_submenu" sequence="110" action="act_gyminstructor" />
+			
+	</data>
+</odoo>

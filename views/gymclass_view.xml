@@ -3,7 +3,7 @@
 	<data>
 		<!-- VISTA FORM -->
 		<record model="ir.ui.view" id="gym_gymclass_form">
-			<field name="name">Classes</field>
+			<field name="name">Clases</field>
 			<field name="model">gym.gymclass</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de clases">
@@ -13,6 +13,7 @@
 						<field name="end" />
 						<field name="capacity" />
 						<field name="activityType" />
+						<field name="gyminstructor_id" />
 						<field name="gymuser_ids" />
 					</group>
 				</form>
@@ -21,7 +22,7 @@
 		
 		<!-- VISTA TREE -->
 		<record model="ir.ui.view" id="gym_gymclass_tree">
-			<field name="name">Classes</field>
+			<field name="name">Clases</field>
 			<field name="model">gym.gymclass</field>
 			<field name="arch" type="xml">
 				<tree>
@@ -30,6 +31,7 @@
 					<field name="end" />
 					<field name="capacity" />
 					<field name="activityType" />
+					<field name="gyminstructor_id" />
 					<field name="gymuser_ids" />
 				</tree>
 			</field>

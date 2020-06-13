@@ -16,3 +16,4 @@ class gymclass(models.Model):
                                      'Tipo de actividad')
     
     gymuser_ids = fields.Many2many("gym.gymuser",string="Usuarios confirmados")
+    gyminstructor_id = fields.Many2one('gym.gyminstructor','Instructor')
