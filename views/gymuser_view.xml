@@ -2,12 +2,12 @@
 <odoo>
 	<data>
 		<!-- VISTA FORM -->
-		<record model="ir.ui.view" id="gym_gymuser_form">
-			<field name="name">Usuarios</field>
+		<record model="ir.ui.view" id="gym_gymuser_form_view">
+			<field name="name">gym_gymuser_form_view</field>
 			<field name="model">gym.gymuser</field>
 			<field name="arch" type="xml">
-				<form string="Formulario de Usuario">
-					<group string="Users">
+				<form string="Formulario de Usuarios">
+					<group string="Usuario">
 						<field name="name" />
 						<field name="idcard" />
 						<field name="photo" />
@@ -18,11 +18,11 @@
 		</record>
 		
 		<!-- VISTA TREE -->
-		<record model="ir.ui.view" id="gym_gymuser_tree">
-			<field name="name">Usuarios</field>
+		<record model="ir.ui.view" id="gym_gymuser_tree_view">
+			<field name="name">gym_gymuser_tree_view</field>
 			<field name="model">gym.gymuser</field>
 			<field name="arch" type="xml">
-				<tree>
+				<tree string = "Lista de Usuarios">
 					<field name="name" />
 					<field name="idcard" />
 					<field name="photo" />
@@ -37,9 +37,7 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 		
-		<menuitem id="gym" name="Usuarios" action="act_gymuser" />
-		
-		<menuitem name="Clases" id="gymuser_submenu" parent="gym"
+		<menuitem name="Usuarios" id="gymuser_submenu" parent="gym"
 			sequence="100" />
 			
 		<menuitem name="Ver usuarios" id="gymuser_submenu_2"

@@ -2,8 +2,8 @@
 <odoo>
 	<data>
 		<!-- VISTA FORM -->
-		<record model="ir.ui.view" id="gym_gymclass_form">
-			<field name="name">Clases</field>
+		<record model="ir.ui.view" id="gym_gymclass_form_view">
+			<field name="name">gym_gymclass_form_view</field>
 			<field name="model">gym.gymclass</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de clases">
@@ -21,11 +21,11 @@
 		</record>
 		
 		<!-- VISTA TREE -->
-		<record model="ir.ui.view" id="gym_gymclass_tree">
-			<field name="name">Clases</field>
+		<record model="ir.ui.view" id="gym_gymclass_tree_view">
+			<field name="name">gym_gymclass_tree_view</field>
 			<field name="model">gym.gymclass</field>
 			<field name="arch" type="xml">
-				<tree>
+				<tree string = "Lista de Clases">
 					<field name="name" />
 					<field name="start" />
 					<field name="end" />
@@ -44,6 +44,7 @@
 		</record>
 		
 		<menuitem id="gym" name="Gimnasio" action="act_gymclass" />
+		
 		<menuitem name="Clases" id="gymclasses_submenu" parent="gym"
 			sequence="100" />
 		<menuitem name="Ver clases" id="gymclasses_submenu_2"
