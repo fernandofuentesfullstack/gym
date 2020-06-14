@@ -59,6 +59,25 @@
 			</field>
 		</record>
 		
+		<!-- Search View -->
+		<record model="ir.ui.view" id="gym_gymclass_search_view">
+			<field name="name">gym_gymclass_search_view</field>
+			<field name="model">gym.gymclass</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Clases">
+					<filter string="Capacidad > 5" domain="[('capacity','>',5)]" />
+					<separator orientation="vertical" />
+					<field name="gymuser_ids" />
+					<group expand="0" string="Agrupar por">
+						<filter name="group_by_activityType" 
+							string="Actividad"
+							context="{'group_by':'activityType'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
 		<record id="act_gymclass" model="ir.actions.act_window">
 			<field name="name">Clases</field>
 			<field name="res_model">gym.gymclass</field>
