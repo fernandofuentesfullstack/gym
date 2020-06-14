@@ -7,15 +7,20 @@
 			<field name="model">gym.gymclass</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de clases">
-					<group string="Classes">
+					<group string="Clase">
 						<field name="name" />
 						<field name="start" />
 						<field name="end" />
 						<field name="capacity" />
 						<field name="activityType" />
 						<field name="gyminstructor_id" />
-						<field name="gymuser_ids" />
 					</group>
+					<field name="gymuser_ids" nolabel="1" colspan="4">
+						<tree>
+							<field name="name" />
+							<field name="idcard" />
+						</tree>
+					</field>
 				</form>
 			</field>
 		</record>
@@ -42,8 +47,6 @@
 			<field name="res_model">gym.gymclass</field>
 			<field name="view_mode">tree,form</field>
 		</record>
-		
-		<menuitem id="gym" name="Gimnasio" action="act_gymclass" />
 		
 		<menuitem name="Clases" id="gymclasses_submenu" parent="gym"
 			sequence="100" />

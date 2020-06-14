@@ -9,4 +9,4 @@ class gyminstructor(models.Model):
     idcard = fields.Char('ID Tarjeta', size = 9, required = True)
     photo = fields.Binary('Foto')
     
-    gymclass_ids = fields.One2many('gym.gymclass','gyminstructor_id','Classes')
+    gymclass_ids = fields.One2many('gym.gymclass','gyminstructor_id','Clases')

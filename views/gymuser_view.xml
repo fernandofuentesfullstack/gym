@@ -8,10 +8,22 @@
 			<field name="arch" type="xml">
 				<form string="Formulario de Usuarios">
 					<group string="Usuario">
-						<field name="name" />
-						<field name="idcard" />
-						<field name="photo" />
-						<field name="gymclass_ids" widget="many2many" />
+						<group>
+							<field name="idcard" />
+							<field name="name" />
+						</group>
+						<group>
+							<field name="photo" nolabel="1" widget="image" class="oe_avatar" />
+						</group>
+						<group colspan="4">
+							<field name="gymclass_ids">
+								<tree>
+									<field name="name" />
+									<field name="start" />
+									<field name="end" />
+								</tree>
+							</field>
+						</group>
 					</group>
 				</form>
 			</field>
@@ -23,10 +35,8 @@
 			<field name="model">gym.gymuser</field>
 			<field name="arch" type="xml">
 				<tree string = "Lista de Usuarios">
-					<field name="name" />
 					<field name="idcard" />
-					<field name="photo" />
-					<field name="gymclass_ids" />
+					<field name="name" />
 				</tree>
 			</field>
 		</record>
@@ -37,8 +47,10 @@
 			<field name="view_mode">tree,form</field>
 		</record>
 		
+		<menuitem id="gym" name="Gimnasio" action="act_gymuser" />
+		
 		<menuitem name="Usuarios" id="gymuser_submenu" parent="gym"
-			sequence="100" />
+			sequence="50" />
 			
 		<menuitem name="Ver usuarios" id="gymuser_submenu_2"
 			parent="gymuser_submenu" sequence="100" action="act_gymuser" />
