@@ -42,10 +42,27 @@
 			</field>
 		</record>
 		
+		<!-- Calendar View -->
+		<record model="ir.ui.view" id="gym_gymclass_calendar_view">
+			<field name="name">gym_gymclass_calendar_view</field>
+			<field name="model">gym.gymclass</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Clases" 
+					color="activityType" 
+					date_start="start" 
+					date_stop="end" 
+					mode="month">
+						<field name="name" />
+						<field name="capacity" />
+				</calendar>
+			</field>
+		</record>
+		
 		<record id="act_gymclass" model="ir.actions.act_window">
 			<field name="name">Clases</field>
 			<field name="res_model">gym.gymclass</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,calendar</field>
 		</record>
 		
 		<menuitem name="Clases" id="gymclasses_submenu" parent="gym"
