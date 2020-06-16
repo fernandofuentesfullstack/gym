@@ -16,6 +16,8 @@ class gymuser(models.Model):
                               'Estado',
                               default='solicitante')
     
+    _sql_constraints = [('gymuser_idcard_unique','UNIQUE (idcard)','El idcard debe ser único')]
+    
     @api.one
     def btn_submit_to_admitido(self):
         self.write({'state':'admitido'})
@@ -23,8 +25,21 @@ class gymuser(models.Model):
     @api.one
     def btn_submit_to_cancelado(self):
         self.write({'state':'cancelado'})
+        #Ademas hay que borrar todos las clases reservadas
+        #para fechas posteriores al momento de la cancelación
+        hoy = fields.Date.context_today(self)
+        _logger.debug("HOY " + str(hoy))
+        _logger.debug("usuario cancelado " + str(self.name))
+        
+        for clase in self.gymclass_ids:
+            _logger.debug("Clase.start " + str(clase.start))
+            if clase.start > hoy:
+            #Borrar registro
+                _logger.debug("Clase a borrar " + str(clase.id))
+                self.write({'gymclass_ids': [ (3, clase.id ) ] })
 
     @api.onchange('gymclass_ids')
     def onchange_gymclass(self):
         if self.state != 'admitido':
             raise models.ValidationError('El usuario debe estar admitido para apuntarlo a una clase')
+

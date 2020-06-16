@@ -10,3 +10,7 @@ class gyminstructor(models.Model):
     photo = fields.Binary('Foto')
     
     gymclass_ids = fields.One2many('gym.gymclass','gyminstructor_id','Clases')
+    
+    def quitarClasesDeInstructor(self):
+        # Eliminamos los registros de la relación many2many 
+        self.write({'gymclass_ids':[ (5,  ) ]})

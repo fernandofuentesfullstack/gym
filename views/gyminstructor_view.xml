@@ -34,6 +34,8 @@
 							</page>
 						</notebook>
 					</group>
+					<newline></newline>
+					<button name="quitarClasesDeInstructor" string="Quitar clases" type="object"></button>
 				</form>
 			</field>
 		</record>

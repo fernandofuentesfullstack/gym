@@ -14,6 +14,7 @@
 						<field name="capacity" />
 						<field name="activityType" />
 						<field name="gyminstructor_id" />
+						<field name="ocupacion" />
 					</group>
 					<field name="gymuser_ids" nolabel="1" colspan="4">
 						<tree>
@@ -21,6 +22,8 @@
 							<field name="idcard" />
 						</tree>
 					</field>
+					<newline></newline> 
+					<button name="desapuntarSocios" string="Desapuntar socios" type="object"></button> 
 				</form>
 			</field>
 		</record>
@@ -37,6 +40,7 @@
 					<field name="capacity" />
 					<field name="activityType" />
 					<field name="gyminstructor_id" />
+					<field name="ocupacion" />
 					<field name="gymuser_ids" />
 				</tree>
 			</field>
@@ -78,10 +82,22 @@
 			</field>
 		</record>
 		
+		<!-- Graph View -->
+		<record model="ir.ui.view" id="gym_gymclass_graph_view">
+			<field name="name">gym_gymclass_graph_view</field>
+			<field name="model">gym.gymclass</field>
+			<field name="arch" type="xml">
+				<graph string="Numero de usuarios por clase" type="bar">
+					<field name="name" />
+					<field name="ocupacion" />
+				</graph>
+			</field>
+		</record>
+		
 		<record id="act_gymclass" model="ir.actions.act_window">
 			<field name="name">Clases</field>
 			<field name="res_model">gym.gymclass</field>
-			<field name="view_mode">tree,form,calendar</field>
+			<field name="view_mode">tree,form,calendar,graph</field>
 		</record>
 		
 		<menuitem name="Clases" id="gymclasses_submenu" parent="gym"
