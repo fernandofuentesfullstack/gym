@@ -7,6 +7,15 @@
 			<field name="model">gym.gymuser</field>
 			<field name="arch" type="xml">
 				<form string="Formulario de Usuarios">
+				
+					<header>
+						<button name="btn_submit_to_admitido" string="Admitir"
+							type="object" class="oe_highlight" states="solicitante" />
+						<button name="btn_submit_to_cancelado" string="Cancelar"
+							type="object" class="oe_highlight" states="admitido" />
+						<field name="state" widget="statusbar" />
+					</header>
+				
 					<group string="Usuario">
 						<group>
 							<field name="idcard" />

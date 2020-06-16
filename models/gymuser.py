@@ -10,3 +10,9 @@ class gymuser(models.Model):
     photo = fields.Binary('Foto')
     
     gymclass_ids = fields.Many2many('gym.gymclass', string = 'Reserva de clases')
+    state = fields.Selection([('solicitante','Solicitante'),
+                              ('admitido','Admitido'),
+                              ('cancelado','Cancelado'),],
+                              'Estado',
+                              default='solicitante')
+    
