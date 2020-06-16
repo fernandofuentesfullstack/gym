@@ -16,3 +16,15 @@ class gymuser(models.Model):
                               'Estado',
                               default='solicitante')
     
+    @api.one
+    def btn_submit_to_admitido(self):
+        self.write({'state':'admitido'})
+
+    @api.one
+    def btn_submit_to_cancelado(self):
+        self.write({'state':'cancelado'})
+
+    @api.onchange('gymclass_ids')
+    def onchange_gymclass(self):
+        if self.state != 'admitido':
+            raise models.ValidationError('El usuario debe estar admitido para apuntarlo a una clase')

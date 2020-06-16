@@ -8,6 +8,6 @@
     'version': '0.1',
     'depends': ['base'],
     'data': ['views/gymuser_view.xml', 'views/gymclass_view.xml', 'views/gyminstructor_view.xml'],
-    'demo': [ ],
+    'demo': [],
     'application': True,
 }
