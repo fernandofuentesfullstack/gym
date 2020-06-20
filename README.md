@@ -1,2 +1,2 @@
-# gym
-Gimnasio desarrollado con Python usando Odoo
+# Gym
+Gym developed with Python using Odoo
